@@ -10,6 +10,12 @@
 [centos8]
 192.168.60.21
 
+[ubuntu1804]
+192.168.60.30
+
+[ubuntu2004]
+192.168.60.31
+
 [debian:children]
 debian9
 debian10
@@ -18,9 +24,17 @@ debian10
 centos7
 centos8
 
+[ubuntu:children]
+ubuntu1804
+ubuntu2004
+
 [multi:children]
 debian
 centos
+ubuntu
+
+[ubuntu2004:vars]
+ansible_python_interpreter=/usr/bin/python3
 
 [multi:vars]
 ansible_ssh_user=vagrant

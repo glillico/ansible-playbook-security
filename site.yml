@@ -2,11 +2,18 @@
 # file site.yml
 
 - hosts: all
+
+  vars_files:
+    - vars.yml
+    - vault.yml
+
   roles:
     - ansible-role-configure_firewall
+    - ansible-role-setup_users
+    - ansible-role-configure_sudo
+    - ansible-role-set_hostname
     - ansible-role-configure_sshd
     - ansible-role-update_pkgs
     - ansible-role-install_fail2ban
     - ansible-role-auto_pkg_updates
-    - ansible-role-setup_users
     - ansible-role-copy_etc_issue

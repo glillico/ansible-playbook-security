@@ -21,11 +21,14 @@
       # when: NOT RUNNING IN DOCKER CONTAINER.
       tags: ['hostname']
 
+    - role: ansible-role-update_pkgs
+      tags: ['update_pkgs']
+
     - role: ansible-role-configure_sshd
       tags: ['sshd']
 
-    - role: ansible-role-update_pkgs
-      tags: ['update_pkgs']
+    - role: ansible-role-configure_ntp
+      tags: ['ntp']
 
     - role: ansible-role-install_fail2ban
       tags: ['fail2ban']

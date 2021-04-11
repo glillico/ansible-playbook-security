@@ -4,8 +4,8 @@
 - hosts: all
 
   vars_files:
-    - vars.yml
-    - vault.yml
+    - vars/main.yml
+    - vars/vault.yml
 
   roles:
     - ansible-role-configure_firewall

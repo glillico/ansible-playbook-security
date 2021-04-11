@@ -22,8 +22,9 @@ All roles listed in requirements.yml must be present.
     - git clone https://github.com/glillico/ansible-role-update_pkgs roles/ansible-role-update_pkgs
     - git clone https://github.com/glillico/ansible-role-auto_pkg_updates roles/ansible-role-auto_pkg_updates
     - git clone https://github.com/glillico/ansible-role-setup_users roles/ansible-role-setup_users
+    - git clone https://github.com/glillico/ansible-role-install_fail2ban roles/ansible-role-install_fail2ban
   - Run the below command to run the playbook, you will need to enter your account password when prompted.
-    - `$ ansible-playbook -i inventory site.yml -Kb`
+    - `$ ansible-playbook -i inventory main.yml -Kb`
 
 ## Role Variables
 
@@ -37,6 +38,7 @@ See the individual roles for variable descriptions.
 - [ansible-role-update_pkgs](https://github.com/glillico/ansible-role-update_pkgs)<br>
 - [ansible-role-auto_pkg_updates](https://github.com/glillico/ansible-role-auto_pkg_updates)<br>
 - [ansible-role-setup_users](https://github.com/glillico/ansible-role-setup_users)<br>
+- [ansible-role-install_fail2ban](https://github.com/glillico/ansible-role-install_fail2ban)<br>
 
 ## Dependencies
 

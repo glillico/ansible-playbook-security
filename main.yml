@@ -8,12 +8,30 @@
     - vars/vault.yml
 
   roles:
-    - ansible-role-configure_firewall
-    - ansible-role-setup_users
-    - ansible-role-configure_sudo
-    - ansible-role-set_hostname
-    - ansible-role-configure_sshd
-    - ansible-role-update_pkgs
-    - ansible-role-install_fail2ban
-    - ansible-role-auto_pkg_updates
-    - ansible-role-copy_etc_issue
+    - role: ansible-role-configure_firewall
+      tags: ['firewall']
+
+    - role: ansible-role-setup_users
+      tags: ['users']
+
+    - role: ansible-role-configure_sudo
+      tags: ['sudo']
+
+    - role: ansible-role-set_hostname
+      # when: NOT RUNNING IN DOCKER CONTAINER.
+      tags: ['hostname']
+
+    - role: ansible-role-configure_sshd
+      tags: ['sshd']
+
+    - role: ansible-role-update_pkgs
+      tags: ['update_pkgs']
+
+    - role: ansible-role-install_fail2ban
+      tags: ['fail2ban']
+
+    - role: ansible-role-auto_pkg_updates
+      tags: ['auto_pkg_updates']
+
+    - role: ansible-role-copy_etc_issue
+      tags: ['issue']

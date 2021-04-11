@@ -5,18 +5,18 @@
 firewall_ufw:
   - firewall_ufw_rule: 'limit'
     firewall_ufw_direction: 'in'
-    firewall_ufw_interface: ''
-    firewall_ufw_from_ip: ''
-    firewall_ufw_from_port: ''
-    firewall_ufw_to_ip: ''
+    # firewall_ufw_interface: ''
+    # firewall_ufw_from_ip: ''
+    # firewall_ufw_from_port: ''
+    # firewall_ufw_to_ip: ''
     firewall_ufw_to_port: '22'
     firewall_ufw_proto: 'tcp'
-    firewall_ufw_comment: ''
+    # firewall_ufw_comment: ''
 
 firewall_firewalld:
   - firewall_firewalld_state: 'enabled'
     firewall_firewalld_port: '22/tcp'
-    firewall_firewalld_zone: ''
+    # firewall_firewalld_zone: ''
 
 # ansible-role-configure_sshd vars.
 configure_sshd_AllowGroups_user: "administrator"
@@ -26,8 +26,8 @@ configure_sudo_users:
  - configure_sudo_users_name: 'administrator'
    configure_sudo_users_hosts: 'ALL'
    configure_sudo_users_operator: 'ALL'
-   configure_sudo_users_option: ''
-   configure_sudo_users_command: ''
+   # configure_sudo_users_option: ''
+   # configure_sudo_users_command: ''
    configure_sudo_users_state: 'present'
 
 # ansible-role-set_hostname vars.
@@ -47,5 +47,5 @@ users:
     setup_users_state: 'present'
     setup_users_group: 'administrator'
     setup_users_shell: '/bin/bash'
-    setup_users_password : ''
+    setup_users_password : 'GET PASSWORD FROM VAULT'
     setup_users_update_password: on_create

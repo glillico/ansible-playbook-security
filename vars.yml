@@ -1,0 +1,51 @@
+---
+# vars file for playbook_secutiry
+
+# ansible-role-configure_firewall vars.
+firewall_ufw:
+  - firewall_ufw_rule: 'limit'
+    firewall_ufw_direction: 'in'
+    firewall_ufw_interface: ''
+    firewall_ufw_from_ip: ''
+    firewall_ufw_from_port: ''
+    firewall_ufw_to_ip: ''
+    firewall_ufw_to_port: '22'
+    firewall_ufw_proto: 'tcp'
+    firewall_ufw_comment: ''
+
+firewall_firewalld:
+  - firewall_firewalld_state: 'enabled'
+    firewall_firewalld_port: '22/tcp'
+    firewall_firewalld_zone: ''
+
+# ansible-role-configure_sshd vars.
+configure_sshd_AllowGroups_user: "administrator"
+
+# ansible-role-configure_sudo vars.
+configure_sudo_users:
+ - configure_sudo_users_name: 'administrator'
+   configure_sudo_users_hosts: 'ALL'
+   configure_sudo_users_operator: 'ALL'
+   configure_sudo_users_option: ''
+   configure_sudo_users_command: ''
+   configure_sudo_users_state: 'present'
+
+# ansible-role-set_hostname vars.
+mac_address_mapping:
+  "08:00:27:a2:5e:aa":
+    name: centos7.test
+
+# ansible-role-setup_users vars.
+suu_groups:
+  - suu_groups_name: administrator
+    suu_groups_gid: 2000
+    suu_groups_state: present
+
+users:
+  - setup_users_name: 'c'
+    setup_users_comment: 'Server Administrator'
+    setup_users_state: 'present'
+    setup_users_group: 'administrator'
+    setup_users_shell: '/bin/bash'
+    setup_users_password : ''
+    setup_users_update_password: on_create

@@ -1,5 +1,5 @@
 ---
-- name: ansible-role-firewall
+- name: ansible-role-configure_firewall
 - name: ansible-role-configure_sshd
 - name: ansible-role-copy_etc_issue
 - name: ansible-role-configure_sudo
